@@ -95,7 +95,10 @@ class LottoMachine extends HTMLElement {
             numbers.add(Math.floor(Math.random() * 45) + 1);
         }
 
-        numbers.forEach(number => {
+        // Sort numbers in ascending order for better readability
+        const sortedNumbers = Array.from(numbers).sort((a, b) => a - b);
+
+        sortedNumbers.forEach(number => {
             const numberElement = document.createElement('div');
             numberElement.setAttribute('class', 'number');
             numberElement.textContent = number;
@@ -105,3 +108,28 @@ class LottoMachine extends HTMLElement {
 }
 
 customElements.define('lotto-machine', LottoMachine);
+
+// Theme Toggle Logic
+const toggleButton = document.getElementById('theme-toggle');
+const rootElement = document.documentElement;
+
+// Check for saved preference or system preference
+const currentTheme = localStorage.getItem('theme');
+if (currentTheme === 'light') {
+    rootElement.classList.add('light-mode');
+    toggleButton.textContent = '☀️';
+} else {
+    toggleButton.textContent = '🌙';
+}
+
+toggleButton.addEventListener('click', () => {
+    rootElement.classList.toggle('light-mode');
+    
+    if (rootElement.classList.contains('light-mode')) {
+        localStorage.setItem('theme', 'light');
+        toggleButton.textContent = '☀️';
+    } else {
+        localStorage.setItem('theme', 'dark');
+        toggleButton.textContent = '🌙';
+    }
+});
