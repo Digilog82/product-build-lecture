@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lotto Number Generator</title>
+    <title>My Photo Log</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,7 +11,30 @@
 </head>
 <body>
     <button id="theme-toggle" aria-label="Toggle Dark/Light Mode">🌙</button>
-    <lotto-machine></lotto-machine>
+    
+    <div class="container">
+        <header class="profile-header">
+            <div class="profile-pic">
+                <img src="https://via.placeholder.com/150" alt="Profile Picture" id="profile-img">
+            </div>
+            <div class="profile-info">
+                <h1>My Photo Log</h1>
+                <p>Capturing moments, one pixel at a time.</p>
+                <label for="photo-upload" class="upload-btn">
+                    <span>+ Add Photo</span>
+                    <input type="file" id="photo-upload" accept="image/*" hidden>
+                </label>
+            </div>
+        </header>
+
+        <main class="gallery" id="gallery">
+            <!-- Photos will be injected here -->
+            <div class="gallery-item placeholder">
+                <p>No photos yet. Add some!</p>
+            </div>
+        </main>
+    </div>
+
     <script src="main.js"></script>
 </body>
 </html>
