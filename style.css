@@ -1,1 +1,30 @@
-/* Add styles here */
+
+:root {
+    --background-color: #1a1a1a;
+    --primary-color: #ff3c78;
+    --secondary-color: #3cffff;
+    --text-color: #ffffff;
+    --font-family-display: 'Orbitron', sans-serif;
+    --font-family-body: 'Roboto Mono', monospace;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--font-family-body);
+    margin: 0;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+lotto-machine {
+    display: block;
+    width: 90%;
+    max-width: 500px;
+    container-type: inline-size;
+}
